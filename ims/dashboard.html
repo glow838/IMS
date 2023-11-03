@@ -7,32 +7,65 @@
 	<script src="https://kit.fontawesome.com/8d13b4d26f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div>
-		<div class="dashboard_sidebar">
-			<h3 class="dashboard_logo">IMS</h3>
-			<div class="dashboard_sidebar_user">
-				<img src="" alt="User image." />
+	<div id="dashboardMainContainer">
+		<div class="dashboard_sidebar" id="dashboard_sidebar">
+			<h3 class="dashboard_logo" id="dashboard_logo">IMS</h3>
+			<div class="dashboard_sidebar_user"> 
+				<img src="images/user/user.png" alt="User image." id="userImage"/>
 				<span>Gomez</span>
 			</div>
 			<div class="dashboard_sidebar_menus">
 				<ul class="dashboard_menu_lists">
-					<li>
-						<a href=""><i class="fa fa-dashboard"></i> Dashboard</a>
+					<li class="menuActive">
+						<a href=""><i class="fa fa-dashboard"></i><span class="menuText">Dashboard</span></a>
 					</li>
 
 					<li>
-						<a href=""><i class="fa fa-dashboard"></i> Dashboard</a>
+						<a href=""><i class="fa fa-dashboard"></i><span class="menuText">Dashboard</span></a>
 					</li>	
 				</ul>
 			</div>
 		</div>
-		<div class="dashboard_content_container">
+		<div class="dashboard_content_container" id="dashboard_content_container">
 			<div class="dashboard_topNav">
-				<a href=""><i class="fa fa-navicon"></i></a>
-				<a href=""><i class="fa fa-power-off"></i> Log-out</a>
+				<a href="" id="toggleBtn"><i class="fa fa-navicon"></i></a>
+				<a href="" id="logoutBtn"><i class="fa fa-power-off"></i> Log-out</a>
 			</div>
-			<div class="dashboard_content"></div>
+			<div class="dashboard_content">
+
+				<div class="dashboard_content_main">
+
+				</div>
+			</div>
 		</div>
 	</div>
+
+	<script>
+		var sideBarIsOpen = true;
+
+		
+
+			toggleBtn.addEventListener( 'click', (event) =>{
+			event.preventDefault();
+			dashboard_sidebar.style.width='10%';
+			dashboard_content_container.style.width='90%';
+			dashboard_logo.style.fontSize = '60px';
+			userImage.style.width = '60px';
+
+			menuIcons = document.getElementsByClassName('menuText');
+			for(var i=0; i < menuIcons.length;i++){
+				menuIcons[i].style.display = 'none';
+			}
+
+			document.getElementsByClassName('dashboard_menu_lists')[0].style.textAlign = 'center';
+
+		
+
+		
+			
+		}		
+		);
+
+	</script>
 </body>
 </html>
